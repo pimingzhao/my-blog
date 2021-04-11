@@ -3,10 +3,10 @@ console.time('更新用时')
 const fs = require('fs')
 const isDirectory = path => fs.statSync(path).isDirectory()
 
-const loop = (dirPath, name) => {
+const loop = (dirPath, name = '') => {
   const files = fs.readdirSync(dirPath)
   if (files.includes('README.md')) {
-    let res = `# ${name}`
+    let res = `# ${name.replace(/^[0-9]*/, '')}`
     files.forEach(file => {
       if (!file.includes('README') && !/image/i.test(file)) {
         res += `\n- [${file.replace(/^[0-9]*/, '')}](./${file + (file.includes('.md') ? '' : '/')})`
