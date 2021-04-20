@@ -8,19 +8,17 @@
 
 我们假设你已经完成以下工作
 
-- 拥有一个 GitHub 账户（https://github.com/）
+- 拥有一个 GitHub 账户（[https://github.com/](https://github.com/)）
 - 拥有一个 vue 项目，且已经上传到 GitHub
-- 在阿里云（https://www.aliyun.com/）购买了一个域名（也可以是其它平台，这里以阿里云为例）
+- 在阿里云（[https://www.aliyun.com/](https://www.aliyun.com/)）购买了一个域名（也可以是其它平台，这里以阿里云为例）
 - 能够科学上网
 
 OK，在科学上网环境下正式开始！
 
 ### 登录
 
-1. 进入官方网址：https://app.netlify.com/
-
+1. 进入官方网址：[https://app.netlify.com/](https://app.netlify.com/)
 2. login -> 选择 GitHub 登录
-
 3. 如果有错误信息提示，像下面这样
 
 ~~~
