@@ -1,5 +1,9 @@
 # frontend
 - [Http](./Http/)
 - [JavaScript](./JavaScript/)
+- [Qiankun](./Qiankun/)
 - [React](./React/)
 - [Vue](./Vue/)
+- [WebPack](./WebPack/)
+- [面试宝典](./面试宝典/)
+- [项目部署](./项目部署/)
