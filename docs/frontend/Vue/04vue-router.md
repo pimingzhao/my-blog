@@ -8,9 +8,9 @@
 import vue from 'vue'
 import Router from 'vue-router'
 import routes from './router'
-​
+
 vue.use(Router)
-​
+
 const router = newRouter({
   // 默认为 hash
   mode: 'history',
@@ -18,7 +18,7 @@ const router = newRouter({
   base: '/',
   routes
 })
-​
+
 router.beforeEach((to, from, next) => {
   // 正要离开的路由对象
   console.error('from', from)
