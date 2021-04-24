@@ -62,8 +62,37 @@ ie 浏览器在触发事件时触发 `冒泡` 机制：由里层到顶层节点�
 
 ### 微任务与宏任务
 
-目前 js 执行环境有两种： `node`、`浏览器` 。由执行环境规定的异步执行任务类似 `setTimeout` 、`setInterval` 被称为宏任务；而由语言标准 `ECMScript` 提供的类似 `Promise` 、`Generator` 别称为微任务；
+目前 js 执行环境有两种： `node`、`浏览器` 。由执行环境规定的异步执行任务类似 `setTimeout` 、`setInterval` 被称为宏任务；而由语言标准 `ECMScript` 提供的类似 `Promise` 、`Generator` 异步事件执行为微任务；
 
 要点：
 
-- 微任务会比宏任务优先执行
+- 执行时间相同时微任务会比宏任务优先完成：当执行栈执行完同步代码后，优先检查是否有微任务队列，其次检查是否有宏任务队列。
+
+~~~javascript
+// demo 来源：https://www.zhihu.com/search?type=content&q=js%E5%BE%AE%E4%BB%BB%E5%8A%A1%E4%B8%8E%E5%AE%8F%E4%BB%BB%E5%8A%A1
+console.log(1)
+
+setTimeout(function() {
+  console.log(2)
+})
+
+new Promise(function (resolve) {
+  console.log(3)
+  resolve()
+}).then(function () {
+  console.log(4)
+}).then(function() {
+  console.log(5)
+})
+
+console.log(6)
+// 执行结果：1 3 6 4 5 2
+~~~
+
+## 普通函数与箭头函数的区别
+
+- this 指向不一样
+  - 普通函数 this 指向函数本身；箭头函数 this 指向函数调用者
+- 箭头函数没有 arguments 对象
+  - 普通函数可以通过 arguments 对象获取函数参数
+

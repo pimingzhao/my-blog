@@ -13,3 +13,7 @@ child mounted;
 parent mounted;
 ~~~
 
+## vue data为什么是函数而不是对象
+
+为对象的话，同一个组件被不同页面使用时，共享的是同一个 `state` ，所以用的是函数。
+
