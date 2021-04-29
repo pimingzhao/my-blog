@@ -92,7 +92,7 @@ console.log(6)
 ## 普通函数与箭头函数的区别
 
 - this 指向不一样
-  - 普通函数 this 指向函数本身；箭头函数 this 指向函数调用者
+  - 普通函数 this 指向函数本身；箭头函数自身无 this，所以 this 会由原型链向上查找
 - 箭头函数没有 arguments 对象
   - 普通函数可以通过 arguments 对象获取函数参数
 

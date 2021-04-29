@@ -12,7 +12,7 @@
 
 ## flex 布局
 
-阮一峰的教程：http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html
+阮一峰的教程：[http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html)
 
 ### 常见的问题
 
