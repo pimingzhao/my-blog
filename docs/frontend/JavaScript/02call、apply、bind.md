@@ -11,3 +11,19 @@
 
 ## bind
 
+实现一个 bind ：
+
+~~~javascript
+var myBind = function (context) {
+  var that = this;
+  var args = Array.prototype.slice.call(arguments, 1);
+  var fBound = function () {
+    const bindArgs = Array.prototype.slice.call(arguments);
+    // fBound 为构造函数时，this 指向函数本身
+    return that.apply(this instanceof fBound ? this : context, args.concat(bindArgs));
+  }
+  fBound.prototype = this.prototype;
+  return fBound;
+}
+~~~
+
