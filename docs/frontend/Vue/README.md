@@ -6,3 +6,4 @@
 - [vuex.md](./05vuex.md)
 - [vue-ssr.md](./06vue-ssr.md)
 - [Demos](./07Demos/)
+- [vue-cli.md](./07vue-cli.md)
