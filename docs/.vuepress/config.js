@@ -1,9 +1,10 @@
 const frontend = require('./frontend');
 const backend = require('./backend');
+const skill = require('./skill');
 
 module.exports = {
   base: '/',
-  title: 'pimzh的个人博客',
+  title: 'Pimzh的个人博客',
   description: '个人博客',
   head: [
     [
@@ -39,6 +40,11 @@ module.exports = {
         ]
       },
       {
+        text: '职能文档',
+        // ariaLabel: 'Language Menu',
+        items: skill.nav
+      },
+      {
         text: '个人项目',
         // ariaLabel: 'Language Menu',
         items: [
@@ -50,6 +56,7 @@ module.exports = {
     sidebar: {
       ...frontend.side,
       ...backend.side,
+      ...skill.side,
     }, // 侧边栏
     displayAllHeaders: false // 显示所有页面的标题链接 默认值：false
   },

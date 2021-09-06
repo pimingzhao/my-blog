@@ -2,7 +2,7 @@
 
 > [https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/create](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/create)
 >
-> **`Object.create()`**方法创建一个新对象，使用现有的对象提供新给创建的新对象的 `__proto__`。
+> `Object.create()` 方法创建一个新对象，使用现有的对象提供新给创建的新对象的 `__proto__`。
 
 使用 `let obj = {}` 方式构建的对象默认 `__proto__` 指向 `Object`。使用 `Object.create` 方法允许我们指定实例对象的 `__proto__` 指向对象。 
 
@@ -40,11 +40,17 @@ const deepClone = function (obj) {
 
 ## js事件机制
 
-谷歌浏览器在触发事件时触发 `捕获` 机制：由顶层到里层节点（document -> body -> div） 
+- 事件捕获：事件触发由外至内
+- 事件冒泡：事件触发由内至外
 
-ie 浏览器在触发事件时触发 `冒泡` 机制：由里层到顶层节点（div->body->document）
+同一个元素同时绑定捕获与冒泡时，w3c 标准规定执行顺序为：事件捕获 -> 事件冒泡
 
-浏览器的事件使用的是 `发布-订阅者` 模式：通过 `window.addEventListener` 订阅对应的事件，在触发对应事件时，由发布者更新发布事件。
+如何规定事件触发机制：
+
+~~~javascript
+element.addEventListener(event, function, useCapture)
+// useCapture 默认值为false：事件句柄在冒泡阶段执行；值为 true 事件句柄在捕获阶段执行
+~~~
 
 ## js Event loop
 
@@ -95,4 +101,33 @@ console.log(6)
   - 普通函数 this 指向函数本身；箭头函数自身无 this，所以 this 会由原型链向上查找
 - 箭头函数没有 arguments 对象
   - 普通函数可以通过 arguments 对象获取函数参数
+
+## js继承
+
+参考另一篇文章：[原型与原型链、继承](../JavaScript/01原型与原型链、继承#继承.md)
+
+## 函数柯里化
+
+~~~javascript
+// 函数柯里化
+function add (a, b, c, d) {
+  return a + b + c + d
+}
+
+function currey(fn) {
+  var length = fn.length
+  var args = Array.prototype.slice.call(arguments, 1)
+
+  return function () {
+    var nweArgs = args.concat(Array.prototype.slice.call(arguments))
+    if (nweArgs.length < length) {
+      return currey.apply(this, [fn].concat(nweArgs))
+    }
+    return fn.apply(this, nweArgs)
+  }
+}
+
+currey(add, 1, 2, 3, 4) // 10
+currey(add, 1)()(2)(3, 4) // 10
+~~~
 
