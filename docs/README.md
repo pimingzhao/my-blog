@@ -1,8 +1,8 @@
 ---
 home: true
 # heroImage: /hero.png
-heroText: 侬好呀
-tagline: 啦啦啦啦
+heroText: Hello World
+tagline: 学习使我快乐！
 # actionText: 关于我 →
 # actionLink: /
 features:
