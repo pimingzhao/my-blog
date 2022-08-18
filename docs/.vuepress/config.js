@@ -48,8 +48,8 @@ module.exports = {
         text: '个人项目',
         // ariaLabel: 'Language Menu',
         items: [
-          { text: 'vue-online-editor', link: 'https://vue-online-editor.pimingzhao.top/' },
-          { text: 'vue-component-builder', link: 'https://vue-comp-builder.pimingzhao.top/' }
+          { text: 'vue-online-editor', link: 'http://39.105.53.140:3002/' },
+          { text: 'vue-svg-builder', link: 'http://39.105.53.140:3001/' }
         ]
       }
     ], // 菜单栏
