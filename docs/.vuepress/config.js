@@ -30,7 +30,8 @@ module.exports = {
     backToTop: true,
     nav: [
       { text: '首页', link: '/' },
-      { text: 'github', link: 'https://github.com/pimingzhao/' },
+      { text: 'gitee', link: 'https://gitee.com/pimingzhao' },
+      { text: 'github', link: 'https://github.com/pimingzhao' },
       {
         text: '技术文档',
         // ariaLabel: 'Language Menu',
@@ -39,17 +40,18 @@ module.exports = {
           { text: '后端', items: backend.nav }
         ]
       },
-      {
-        text: '职能文档',
-        // ariaLabel: 'Language Menu',
-        items: skill.nav
-      },
+      // {
+      //   text: '职能文档',
+      //   // ariaLabel: 'Language Menu',
+      //   items: skill.nav
+      // },
       {
         text: '个人项目',
         // ariaLabel: 'Language Menu',
         items: [
-          { text: 'vue-online-editor', link: 'http://39.105.53.140:3002/' },
-          { text: 'vue-svg-builder', link: 'http://39.105.53.140:3001/' }
+          { text: 'vue-park-cli', link: 'https://www.npmjs.com/package/vue-park-cli' },
+          { text: 'question-bank', link: 'https://question-bank.pimingzhao.top' },
+          { text: 'vue-online-editor', link: 'https://vue-online-editor.pimingzhao.top' },
         ]
       }
     ], // 菜单栏
